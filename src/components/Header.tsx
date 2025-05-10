@@ -20,9 +20,9 @@ const Header = () => {
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
-            <Button variant="ghost" className="text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light font-medium">Home</Button>
-            <Button variant="ghost" className="text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light font-medium">Recipes</Button>
-            <Button variant="ghost" className="text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light font-medium">Favorites</Button>
+            <Button variant="ghost" className="text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light">Home</Button>
+            <Button variant="ghost" className="text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light">Recipes</Button>
+            <Button variant="ghost" className="text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light">Favorites</Button>
             
             {/* Search button and dropdown */}
             <div className="relative">
@@ -41,10 +41,10 @@ const Header = () => {
                     <Input 
                       type="text" 
                       placeholder="Search recipes..." 
-                      className="flex-grow"
+                      className="flex-grow border-nutri-primary/20"
                       autoFocus
                     />
-                    <Button type="submit" size="sm" className="ml-2 bg-nutri-primary hover:bg-nutri-primary/90">
+                    <Button type="submit" size="sm" className="ml-2 bg-nutri-primary hover:bg-nutri-primary/90 text-white font-medium">
                       <Search className="h-4 w-4" />
                     </Button>
                   </form>
@@ -52,7 +52,7 @@ const Header = () => {
               )}
             </div>
             
-            <Button className="bg-nutri-primary hover:bg-nutri-primary/90 text-white ml-2">Sign In</Button>
+            <Button className="bg-nutri-primary hover:bg-nutri-primary/90 text-white ml-2 font-semibold">Sign In</Button>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -72,22 +72,22 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden pt-4 pb-2 border-t border-muted mt-4 animate-fade-in">
             <div className="flex flex-col space-y-2">
-              <Button variant="ghost" className="w-full justify-start text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light/50">Home</Button>
-              <Button variant="ghost" className="w-full justify-start text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light/50">Recipes</Button>
-              <Button variant="ghost" className="w-full justify-start text-nutri-dark hover:text-nutri-primary hover:bg-nutri-light/50">Favorites</Button>
+              <Button variant="ghost" className="w-full justify-start text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light/50">Home</Button>
+              <Button variant="ghost" className="w-full justify-start text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light/50">Recipes</Button>
+              <Button variant="ghost" className="w-full justify-start text-nutri-dark font-semibold hover:text-nutri-primary hover:bg-nutri-light/50">Favorites</Button>
               <div className="relative w-full pt-2">
                 <form className="flex items-center">
                   <Input 
                     type="text" 
                     placeholder="Search recipes..." 
-                    className="flex-grow"
+                    className="flex-grow border-nutri-primary/20"
                   />
-                  <Button type="submit" size="sm" className="ml-2 bg-nutri-primary hover:bg-nutri-primary/90">
+                  <Button type="submit" size="sm" className="ml-2 bg-nutri-primary hover:bg-nutri-primary/90 text-white font-medium">
                     <Search className="h-4 w-4" />
                   </Button>
                 </form>
               </div>
-              <Button className="w-full bg-nutri-primary hover:bg-nutri-primary/90 text-white mt-2">Sign In</Button>
+              <Button className="w-full bg-nutri-primary hover:bg-nutri-primary/90 text-white mt-2 font-semibold">Sign In</Button>
             </div>
           </div>
         )}

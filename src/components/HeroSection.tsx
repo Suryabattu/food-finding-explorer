@@ -19,38 +19,40 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
   return (
     <section className="relative bg-gradient-to-r from-nutri-light to-white py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-nutri-dark">
-          Find <span className="text-nutri-primary">Delicious Recipes</span> With What You Have
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <span className="text-nutri-dark">Find </span>
+          <span className="text-nutri-primary">Delicious Recipes</span>
+          <span className="text-nutri-dark"> With What You Have</span>
         </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-nutri-dark/80">
+        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-nutri-dark text-opacity-90 font-medium">
           Enter ingredients you have on hand, and we'll suggest perfect recipes to make with them.
         </p>
         
         <form onSubmit={handleSearch} className="w-full max-w-2xl mx-auto flex flex-col md:flex-row gap-4">
           <div className="relative flex-grow">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-nutri-dark/60" />
             <Input 
               type="text" 
               placeholder="Enter ingredients (e.g., chicken, rice, tomatoes...)" 
-              className="w-full pl-10 py-6 text-base border-2 border-nutri-primary/20 focus-visible:ring-nutri-primary"
+              className="w-full pl-10 py-6 text-base border-2 border-nutri-primary/20 focus-visible:ring-nutri-primary shadow-sm"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
             />
           </div>
           <Button 
             type="submit" 
-            className="bg-nutri-primary hover:bg-nutri-primary/90 text-white h-12 px-8 font-medium"
+            className="bg-nutri-primary hover:bg-nutri-primary/90 text-white h-12 px-8 font-semibold shadow-md"
           >
             Find Recipes
           </Button>
         </form>
 
         <div className="mt-8 flex flex-wrap justify-center gap-2">
-          <span className="text-sm text-muted-foreground">Popular searches:</span>
-          <Button variant="outline" size="sm" onClick={() => onSearch("chicken")}>Chicken</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("pasta")}>Pasta</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("vegetarian")}>Vegetarian</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("quick")}>Quick Meals</Button>
+          <span className="text-sm text-nutri-dark/70 font-medium">Popular searches:</span>
+          <Button variant="outline" size="sm" onClick={() => onSearch("chicken")} className="font-medium border-nutri-primary/30 text-nutri-dark">Chicken</Button>
+          <Button variant="outline" size="sm" onClick={() => onSearch("pasta")} className="font-medium border-nutri-primary/30 text-nutri-dark">Pasta</Button>
+          <Button variant="outline" size="sm" onClick={() => onSearch("vegetarian")} className="font-medium border-nutri-primary/30 text-nutri-dark">Vegetarian</Button>
+          <Button variant="outline" size="sm" onClick={() => onSearch("quick")} className="font-medium border-nutri-primary/30 text-nutri-dark">Quick Meals</Button>
         </div>
       </div>
       
