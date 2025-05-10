@@ -13,7 +13,15 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch(searchInput);
+    if (searchInput.trim()) {
+      onSearch(searchInput);
+    }
+  };
+
+  // Handle quick search button clicks
+  const handleQuickSearch = (term: string) => {
+    setSearchInput(term);
+    onSearch(term);
   };
 
   return (
@@ -49,10 +57,10 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
 
         <div className="mt-8 flex flex-wrap justify-center gap-2">
           <span className="text-sm text-nutri-dark/70 font-medium">Popular searches:</span>
-          <Button variant="outline" size="sm" onClick={() => onSearch("chicken")} className="font-medium border-nutri-primary/30 text-nutri-dark">Chicken</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("pasta")} className="font-medium border-nutri-primary/30 text-nutri-dark">Pasta</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("vegetarian")} className="font-medium border-nutri-primary/30 text-nutri-dark">Vegetarian</Button>
-          <Button variant="outline" size="sm" onClick={() => onSearch("quick")} className="font-medium border-nutri-primary/30 text-nutri-dark">Quick Meals</Button>
+          <Button variant="outline" size="sm" onClick={() => handleQuickSearch("chicken")} className="font-medium border-nutri-primary/30 text-nutri-dark">Chicken</Button>
+          <Button variant="outline" size="sm" onClick={() => handleQuickSearch("pasta")} className="font-medium border-nutri-primary/30 text-nutri-dark">Pasta</Button>
+          <Button variant="outline" size="sm" onClick={() => handleQuickSearch("vegetarian")} className="font-medium border-nutri-primary/30 text-nutri-dark">Vegetarian</Button>
+          <Button variant="outline" size="sm" onClick={() => handleQuickSearch("quick")} className="font-medium border-nutri-primary/30 text-nutri-dark">Quick Meals</Button>
         </div>
       </div>
       
